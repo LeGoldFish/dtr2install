@@ -9,28 +9,25 @@ import org.apache.commons.io.FileUtils;
  * 
  */
 public class Main {
-	static File mainDir = new File(("C:\\Users\\" + System.getProperty("user.name") + "\\Desktop\\DTR2Install"));
-	static File carDir = new File(("C:\\Users\\" + System.getProperty("user.name") + "\\Desktop\\DTR2Install\\cars\\"));
-	static File skinsDir = new File(("C:\\Users\\" + System.getProperty("user.name") + "\\Desktop\\DTR2Install\\skins\\"));
-	static File tracksDir = new File(("C:\\Users\\" + System.getProperty("user.name") + "\\Desktop\\DTR2Install\\tracks\\"));
-	static File gameCarDir = new File("C:\\Games\\Infogrames\\Dirt Track Racing 2\\data\\cars");
-	static File gameSkinsDir = new File("C:\\Games\\Infogrames\\Dirt Track Racing 2\\data\\skins");
-	static File gameTracksDir = new File(("C:\\Games\\Infogrames\\Dirt Track Racing 2\\data\\tracks"));
+	
 
 	public static void main(String[] args) throws IOException {
 		System.out.println("Installing cars from folder: " + "'cars'");
-		if (carDir.isDirectory() && gameCarDir.isDirectory()) {
-			FileUtils.copyDirectory(carDir, gameCarDir);
+		if (Config.carDir.isDirectory() && Config.gameCarDir.isDirectory()) {
+			FileUtils.copyDirectory(Config.carDir, Config.gameCarDir);
+			System.out.println("Done with cars.");
 		}
 		
 		System.out.println("Installing skins from folder: " + "'skins'");
-		if (skinsDir.isDirectory() && gameSkinsDir.isDirectory()) {
-			FileUtils.copyDirectory(skinsDir, gameSkinsDir);
+		if (Config.skinsDir.isDirectory() && Config.gameSkinsDir.isDirectory()) {
+			FileUtils.copyDirectory(Config.skinsDir, Config.gameSkinsDir);
+			System.out.println("Done with skins.");
 		}
 		
 		System.out.println("Installing tracks from folder: " + "'tracks'");
-		if (tracksDir.isDirectory() && gameTracksDir.isDirectory()) {
-			FileUtils.copyDirectory(tracksDir, gameTracksDir);
+		if (Config.tracksDir.isDirectory() && Config.gameTracksDir.isDirectory()) {
+			FileUtils.copyDirectory(Config.tracksDir, Config.gameTracksDir);
+			System.out.println("Done with tracks.");
 		}
 	}
 }
